@@ -1,0 +1,27 @@
+{
+  "name": "mwsp-academy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "lint": "eslint \"**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier -w ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": true,
+  "packageManager": "pnpm@9",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@prisma/client": "^6.9.0",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "prisma": "^6.9.0"
+  }
+}
