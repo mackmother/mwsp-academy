@@ -1,0 +1,58 @@
+// MwSP Academy – initial Prisma schema (AI-first)
+// pgvector extension required on Supabase (see README)
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  extensions        = [pgvector]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+enum PlaybookType {
+  SALES
+  MARKETING
+  OPS
+  CS
+  PRODUCT
+  PRICING
+  INTENSIVE
+}
+
+model Course {
+  id            String      @id @default(uuid())
+  title         String
+  description   String?
+  playbookType  PlaybookType @map("playbook_type")
+  lessons       Lesson[]
+  createdAt     DateTime    @default(now())
+}
+
+model Lesson {
+  id         String   @id @default(uuid())
+  courseId   String
+  course     Course   @relation(fields: [courseId], references: [id])
+  title      String
+  muxAssetId String   @map("mux_asset_id")
+  duration   Int      // seconds
+  order      Int
+  createdAt  DateTime @default(now())
+}
+
+model AiChunk {
+  id           String       @id @default(uuid())
+  courseId     String
+  course       Course       @relation(fields: [courseId], references: [id])
+  playbookType PlaybookType @map("playbook_type")
+  source       String       // video | workbook | transcript
+  content      String
+  tokenCount   Int
+  embedding    Bytes        @db.Vector(1536)
+  createdAt    DateTime     @default(now())
+
+  @@index([playbookType])
+  // Future: add vector index via raw SQL once Prisma supports it in stable CLI
+}
