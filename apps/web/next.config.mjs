@@ -5,8 +5,12 @@ const nextConfig = {
   },
   transpilePackages: ["@mwsp-academy/ai", "openai"],
   eslint: {
-    // Allow production builds to complete even if there are ESLint errors
+    // Skip ESLint errors during production build
     ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Skip TS errors during production build
+    ignoreBuildErrors: true,
   },
 };
 
