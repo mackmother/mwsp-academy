@@ -54,5 +54,5 @@ model AiChunk {
   createdAt    DateTime     @default(now())
 
   @@index([playbookType])
-  @@index([embedding], type: VectorCosine) // pgvector ANN search
+  // Future: add vector index via raw SQL once Prisma supports it in stable CLI
 }
