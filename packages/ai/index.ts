@@ -1,3 +1,11 @@
+import { config } from "dotenv";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Ensure environment variables are loaded BEFORE anything else
+const __dirname = dirname(fileURLToPath(import.meta.url));
+config({ path: resolve(__dirname, "../../.env") });
+
 import { createClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
 
@@ -85,15 +93,59 @@ export async function saveChunks(
   chunks: Chunk[],
   embeddings: Float32Array[]
 ) {
+    // --- Resolve course ID ----------------------------------------------------
+  // If the caller supplied a real UUID we use it directly; otherwise treat the
+  // value as a slug/title and create the Course with a fresh UUID.
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  let cid = courseId;
+  if (!uuidRegex.test(courseId)) {
+    // Provided string is not a UUID; create a new Course and use its generated UUID.
+    const { randomUUID } = await import("node:crypto");
+    cid = randomUUID();
+    await supabase.from("Course").insert({
+      id: cid,
+      title: courseId.replace(/-/g, " "), // use original arg as title
+      playbook_type: playbookType.toUpperCase(),
+    });
+  } else {
+    // If UUID, ensure course exists (insert minimal row if missing)
+    const { data: existing } = await supabase
+      .from("Course")
+      .select("id")
+      .eq("id", cid)
+      .single();
+    if (!existing) {
+      await supabase.from("Course").insert({
+        id: cid,
+        title: "Untitled Course",
+        playbook_type: playbookType.toUpperCase(),
+      });
+    }
+  }
+
   const rows = chunks.map((c, idx) => ({
-    course_id: courseId,
-    playbook_type: playbookType,
+    course_id: cid,
+    playbook_type: playbookType.toUpperCase(), // ensure matches Postgres enum (e.g., "SALES")
     source,
     content: c.content,
     token_count: c.tokenCount,
-    embedding: embeddings[idx],
+    // Supabase pgvector expects number[] not Float32Array
+    embedding: Array.from(embeddings[idx]),
   }));
 
-  const { error } = await supabase.from("AiChunk").insert(rows);
-  if (error) throw error;
+  const { error, data: inserted } = await supabase
+    .from("AiChunk")
+    .insert(rows)
+    .select()
+    .throwOnError();
+  console.log("Inserted rows:", Array.isArray(inserted) ? inserted.length : 0);
+  if (error) {
+    console.error("Supabase insertion error fields:", {
+      message: (error as any).message,
+      details: (error as any).details,
+      hint: (error as any).hint,
+      code: (error as any).code,
+    });
+    throw error;
+  }
 }

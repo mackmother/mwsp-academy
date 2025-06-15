@@ -1,0 +1,15 @@
+{
+  "name": "@mwsp-academy/ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "ingest": "tsx scripts/ingest.ts"
+  },
+  "exports": {
+    "./index": "./index.ts",
+    "./mux": "./mux.ts"
+  }
+}

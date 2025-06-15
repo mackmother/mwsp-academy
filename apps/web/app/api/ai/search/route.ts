@@ -3,6 +3,8 @@ import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
   const query = req.nextUrl.searchParams.get("q") || "";
+  const topK = parseInt(req.nextUrl.searchParams.get("topK") ?? "5", 10);
+  const threshold = parseFloat(req.nextUrl.searchParams.get("threshold") ?? "0.7");
   if (!query) return new Response("Missing q", { status: 400 });
 
   // 1. Embed the query with OpenAI (same model as chunks)
@@ -18,12 +20,16 @@ export async function GET(req: NextRequest) {
   // 2. Vector similarity search via rpc function (cosine distance)
   const { data, error } = await supabase.rpc("match_ai_chunks", {
     query_embedding: embed.embedding,
-    match_threshold: 0.8,
-    match_count: 5,
+    match_threshold: threshold,
+    match_count: topK,
   });
   if (error) {
-    console.error(error);
-    return new Response("Search error", { status: 500 });
+    // Return the full Postgres error details for easier debugging
+    const body = JSON.stringify(error, null, 2);
+    return new Response(body, {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   return Response.json({ results: data });
