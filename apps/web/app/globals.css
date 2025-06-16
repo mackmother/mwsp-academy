@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar & selection */
+::selection {
+  background-color: #F6B352;
+  color: #1F2124;
+}
+
+html,
+body {
+  min-height: 100%;
+}
