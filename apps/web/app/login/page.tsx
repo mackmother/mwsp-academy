@@ -12,7 +12,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
         {/* Branding panel */}
         <div className="hidden lg:block bg-gradient-to-b from-blueGrad-start to-blueGrad-end relative">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-10">
@@ -25,27 +25,31 @@ export default function Login() {
         </div>
 
         {/* Login card */}
-        <div className="flex items-center justify-center px-6 py-12">
+        <div className="flex items-center justify-center px-6 py-12 relative">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-blue-800">Welcome Back</h2>
               <p className="text-sm text-gray-500">Sign in to your account</p>
             </div>
 
-            {/* Auth0 SSO button */}
-            <button
-              onClick={handleAuth0Login}
-              className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100 transition text-sm"
-            >
-              <Image
-                src="https://cdn.jsdelivr.net/npm/simple-icons/icons/auth0.svg"
-                width={20}
-                height={20}
-                alt="Auth0"
-                className="mr-2"
-              />
-              Continue with Auth0
-            </button>
+            {/* SSO Buttons */}
+            <div className="space-y-3">
+              <button
+                onClick={handleAuth0Login}
+                className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100"
+              >
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons/icons/google.svg" width={20} height={20} alt="Google" className="mr-2" />
+                Sign in with Google
+              </button>
+              <button className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons/icons/github.svg" width={20} height={20} alt="GitHub" className="mr-2" />
+                Sign in with GitHub
+              </button>
+              <button className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons/icons/apple.svg" width={20} height={20} alt="Apple" className="mr-2" />
+                Sign in with Apple
+              </button>
+            </div>
 
             {/* Divider */}
             <div className="relative my-6">
