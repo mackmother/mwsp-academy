@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center w-full h-[70vh] bg-gradient-to-b from-[#1F2124] to-[#383A3F] text-white overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center w-full h-screen bg-gradient-to-b from-brand-dark2 to-brand-dark1 text-white overflow-hidden">
       {/* Logo */}
       <div className="flex items-center gap-3 mb-6">
         <Image
@@ -16,7 +16,7 @@ export default function Hero() {
         />
       </div>
       {/* Headline */}
-      <h1 className="text-4xl md:text-6xl font-extrabold text-center max-w-4xl leading-tight">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-center max-w-4xl leading-tight">
         Level-up Your MSP with <span className="text-[#F6B352]">World-Class</span> Playbooks & Courses
       </h1>
       {/* CTA buttons */}
@@ -33,10 +33,6 @@ export default function Hero() {
         >
           Sign In
         </Link>
-      </div>
-      {/* Subtle background flair */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[120%] h-[120%] bg-[#F68657] opacity-10 blur-3xl rounded-full" />
       </div>
     </section>
   );
