@@ -7,6 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        blueGrad: {
+          start: "#1e3a8a", // blue-900
+          end: "#1d4ed8",   // blue-700
+        },
+      },
+      colors: {
         brand: {
           primary: "#F6B352",
           secondary: "#F68657",
@@ -16,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

@@ -14,7 +14,7 @@ export default function Login() {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         {/* Branding panel */}
-        <div className="hidden lg:block bg-gradient-to-b from-brand-dark2 to-brand-dark1 relative">
+        <div className="hidden lg:block bg-gradient-to-b from-blueGrad-start to-blueGrad-end relative">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-10">
             <h1 className="text-4xl font-extrabold mb-4">MSP Growth Hub</h1>
             <p className="text-lg text-center max-w-md text-gray-300">
@@ -28,14 +28,14 @@ export default function Login() {
         <div className="flex items-center justify-center px-6 py-12">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-brand-dark1">Welcome Back</h2>
+              <h2 className="text-3xl font-bold text-blue-800">Welcome Back</h2>
               <p className="text-sm text-gray-500">Sign in to your account</p>
             </div>
 
             {/* Auth0 SSO button */}
             <button
               onClick={handleAuth0Login}
-              className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100 transition"
+              className="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100 transition text-sm"
             >
               <Image
                 src="https://cdn.jsdelivr.net/npm/simple-icons/icons/auth0.svg"
@@ -63,23 +63,23 @@ export default function Login() {
                 type="email"
                 name="email"
                 placeholder="Email address"
-                className="w-full border px-4 py-2 rounded"
+                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-primary focus:border-primary"
                 required
               />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
-                className="w-full border px-4 py-2 rounded"
+                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-primary focus:border-primary"
                 required
               />
-              <button type="submit" className="w-full bg-brand-primary text-white py-2 rounded">
+              <button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white py-2 rounded">
                 Sign In
               </button>
             </form>
 
             <div className="text-center text-sm text-gray-500">
-              <a href="#" className="text-brand-primary hover:underline">
+              <a href="#" className="text-blue-600 hover:underline">
                 Forgot your password?
               </a>
             </div>
