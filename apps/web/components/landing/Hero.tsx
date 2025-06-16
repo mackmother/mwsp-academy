@@ -8,10 +8,10 @@ export default function Hero() {
       {/* Logo */}
       <div className="flex items-center gap-3 mb-6">
         <Image
-          src="/logo.png" // TODO: replace with optimized logo path
+          src="/logo.svg" // TODO: replace with optimized logo path
           alt="MwSP Academy logo"
-          width={180}
-          height={42}
+          width={200}
+          height={45}
           priority
         />
       </div>
