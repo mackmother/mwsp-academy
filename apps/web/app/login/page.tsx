@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import CookieBanner from "@/components/ui/CookieBanner";
+import CookieBanner from "../../components/ui/CookieBanner";
 
 export default function Login() {
   const router = useRouter();
