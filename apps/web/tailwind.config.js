@@ -7,10 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blueGrad: {
-          start: "#1e3a8a", // blue-900
-          end: "#1d4ed8",   // blue-700
-        },
+        'blue-grad-start': '#1e3a8a', // blue-900
+        'blue-grad-end': '#1d4ed8',   // blue-700
       },
       colors: {
         brand: {

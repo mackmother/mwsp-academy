@@ -14,7 +14,7 @@ export default function Login() {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
         {/* Branding panel */}
-        <div className="hidden lg:block bg-gradient-to-b from-blueGrad-start to-blueGrad-end relative">
+        <div className="hidden lg:block bg-gradient-to-b from-blue-grad-start to-blue-grad-end relative">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-10">
             <h1 className="text-4xl font-extrabold mb-4">MSP Growth Hub</h1>
             <p className="text-lg text-center max-w-md text-gray-300">
