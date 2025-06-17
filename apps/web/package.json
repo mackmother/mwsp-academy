@@ -10,22 +10,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mwsp-academy/ai": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "openai": "^5.3.0",
     "@auth0/nextjs-auth0": "^2.5.0",
-    "next": "15.3.3"
+    "@mwsp-academy/ai": "workspace:*",
+    "next": "15.3.3",
+    "openai": "^5.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "autoprefixer": "^10.4.19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

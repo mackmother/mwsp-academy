@@ -1,5 +1,4 @@
 import { NextRequest } from "next/server";
-import { Readable } from "stream";
 
 // We lazy-import to avoid bundling Mux SDK in client builds
 export async function POST(req: NextRequest) {
@@ -19,6 +18,7 @@ export async function POST(req: NextRequest) {
     const upload = await mux.video.uploads.create({
       new_asset_settings: {
         playback_policy: ["public"],
+        // @ts-expect-error Mux types don't yet include this field
         generate_subtitles: true, // let Mux auto-transcribe
       },
       cors_origin: req.headers.get("origin") || "*",
