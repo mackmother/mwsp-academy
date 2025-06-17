@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – MSP Growth Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+<div class="grid grid-cols-1 lg:grid-cols-2 h-screen">
+  <!-- Branding Section -->
+  <div class="hidden lg:block bg-gradient-to-b from-blue-900 to-blue-700 relative">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-10">
+      <h1 class="text-3xl font-bold mb-4">MSP Growth Hub</h1>
+      <p class="text-lg text-center max-w-md">Your portal to world-class playbooks, systems, and strategies for scaling your MSP business.</p>
+    </div>
+  </div>
+
+  <!-- Login Section -->
+  <div class="flex items-center justify-center px-6 py-12 relative">
+    <div class="w-full max-w-md space-y-8">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold text-blue-800">Welcome Back</h2>
+        <p class="text-sm text-gray-500">Sign in to your account</p>
+      </div>
+
+      <!-- SSO Buttons -->
+      <div class="space-y-3">
+        <button class="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/google.svg" class="w-5 h-5 mr-2" alt="Google" />
+          Sign in with Google
+        </button>
+        <button class="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/github.svg" class="w-5 h-5 mr-2" alt="GitHub" />
+          Sign in with GitHub
+        </button>
+        <button class="w-full flex items-center justify-center border border-gray-300 py-2 px-4 rounded hover:bg-gray-100">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/apple.svg" class="w-5 h-5 mr-2" alt="Apple" />
+          Sign in with Apple
+        </button>
+      </div>
+
+      <!-- Divider -->
+      <div class="relative my-6">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+          <span class="bg-white px-2 text-gray-500">or use your email</span>
+        </div>
+      </div>
+
+      <!-- Email Login Form -->
+      <form class="space-y-4 text-sm">
+        <input type="email" placeholder="Email address" class="w-full border px-4 py-2 rounded text-sm" required />
+        <input type="password" placeholder="Password" class="w-full border px-4 py-2 rounded text-sm" required />
+        <div class="flex items-center space-x-2">
+          <input type="checkbox" required />
+          <label for="terms" class="text-xs text-gray-600">By signing in, you agree to our 
+            <a href="/privacy-policy" class="text-blue-600 hover:underline">Privacy Policy</a> and 
+            <a href="/terms-of-service" class="text-blue-600 hover:underline">Terms of Service</a>.
+          </label>
+        </div>
+        <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded hover:bg-blue-800">Sign In</button>
+      </form>
+
+      <div class="text-center text-sm text-gray-500">
+        <a href="#" class="text-blue-600 hover:underline">Forgot your password?</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t shadow z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 gap-4">
+    <p class="text-center md:text-left">
+      We use cookies to personalize content, improve your experience, and analyze traffic. By continuing, you consent to our cookies.
+      <a href="/privacy-policy" class="text-blue-600 underline hover:text-blue-800">Learn more</a>.
+    </p>
+    <div class="flex space-x-3">
+      <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-sm" onclick="document.getElementById('cookie-banner').style.display='none'">Decline</button>
+      <button class="px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded text-sm" onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
