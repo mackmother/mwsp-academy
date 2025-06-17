@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="80" viewBox="0 0 360 80" fill="none">
+  <style>
+    .bold{font:700 58px 'Inter', sans-serif;}
+    .regular{font:600 58px 'Inter', sans-serif;}
+  </style>
+  <!-- MwSP in gold -->
+  <text x="0" y="58" class="bold" fill="#F6B352">MwSP</text>
+  <!-- Dot under M for stylistic match -->
+  <circle cx="10" cy="72" r="4" fill="#F6B352" />
+  <!-- ACADEMY in dark gray -->
+  <text x="185" y="58" class="regular" fill="#383A3F">ACADEMY</text>
+</svg>

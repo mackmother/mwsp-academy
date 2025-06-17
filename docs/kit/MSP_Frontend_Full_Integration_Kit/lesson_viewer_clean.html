@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson Viewer – Sales Process</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Sticky Global Nav -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm px-4 py-3 flex justify-between items-center md:px-8">
+    <div class="text-lg font-bold text-blue-800">MSP Growth Hub</div>
+    <nav class="hidden md:flex space-x-4 text-sm text-gray-700">
+      <a href="/sales" class="hover:text-blue-600">Sales</a>
+      <a href="/marketing" class="hover:text-blue-600">Marketing</a>
+      <a href="/operations" class="hover:text-blue-600">Operations</a>
+      <a href="/success" class="hover:text-blue-600">Customer Success</a>
+      <a href="/product" class="hover:text-blue-600">Product</a>
+      <a href="/pricing" class="hover:text-blue-600">Pricing</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="max-w-6xl mx-auto px-4 md:px-6 py-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+    <!-- Video & Tabs -->
+    <section class="lg:col-span-3 space-y-6">
+      <div class="aspect-w-16 aspect-h-9 bg-black rounded-md overflow-hidden shadow-lg">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <h2 class="text-xl font-bold">Sales Process Designer™</h2>
+      <div class="text-sm text-gray-500 mb-4 flex items-center gap-4">
+        <span class="bg-blue-100 text-blue-700 font-medium px-3 py-1 rounded-full">✔ Marked Complete</span>
+        <span>7 mins</span>
+      </div>
+
+      <!-- Tabs -->
+      <div>
+        <ul class="flex border-b text-sm font-medium text-gray-600 mb-4">
+          <li><a class="px-4 py-2 border-b-2 border-blue-600 text-blue-600" href="#">Overview</a></li>
+          <li><a class="px-4 py-2 hover:text-blue-600" href="#">Attachments</a></li>
+          <li><a class="px-4 py-2 hover:text-blue-600" href="#">Comments</a></li>
+        </ul>
+
+        <!-- Overview -->
+        <div class="text-sm text-gray-700 leading-relaxed">
+          <p>This includes stages like qualification, discovery, evaluation, and negotiation, with meetings such as qualification calls, discovery calls, and demos taking place within each stage.</p>
+          <p class="mt-2">It's important to include any additional prospect-requested meetings in the appropriate stage and set clear exit criteria to move to the next stage. Scheduling next steps is crucial for maintaining momentum.</p>
+        </div>
+
+        <!-- Attachments -->
+        <div class="mt-8">
+          <h4 class="text-sm font-semibold text-gray-700 mb-2">Attachments</h4>
+          <div class="space-y-3">
+            <div class="bg-gray-100 rounded p-4 flex items-center justify-between hover:bg-gray-200">
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                <span class="text-sm">Sales Process Workbook.pdf</span>
+              </div>
+              <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="mt-8">
+          <h4 class="text-sm font-semibold text-gray-700 mb-2">Comments</h4>
+          <div class="bg-white rounded p-4 shadow text-sm text-gray-600">No comments yet. Be the first to add one.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar Playlist -->
+    <aside class="space-y-4">
+      <h3 class="text-sm font-semibold text-gray-700">Lessons in this Module</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex justify-between items-center bg-blue-50 border border-blue-200 px-3 py-2 rounded">
+          <span class="text-blue-700 font-medium">▶ Sales Process Designer</span>
+          <span class="text-xs text-gray-500">7:42</span>
+        </li>
+        <li class="flex justify-between items-center hover:bg-gray-100 px-3 py-2 rounded">
+          <span>Sales Motion Designer</span>
+          <span class="text-xs text-gray-500">40:27</span>
+        </li>
+        <li class="flex justify-between items-center hover:bg-gray-100 px-3 py-2 rounded">
+          <span>Sales Velocity</span>
+          <span class="text-xs text-gray-500">1:33:29</span>
+        </li>
+      </ul>
+    </aside>
+
+  </main>
+</body>
+</html>

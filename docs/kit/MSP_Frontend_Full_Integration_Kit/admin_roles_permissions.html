@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Roles & Permissions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<div class="flex h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md border-r hidden lg:block">
+    <div class="p-6 border-b">
+      <h2 class="text-xl font-bold text-blue-800">Admin Panel</h2>
+    </div>
+    <nav class="p-4 space-y-3 text-sm text-gray-700">
+      <a href="#" class="block px-3 py-2 rounded hover:bg-blue-50">📊 Dashboard</a>
+      <a href="#" class="block px-3 py-2 rounded hover:bg-blue-50">🎥 Videos</a>
+      <a href="#" class="block px-3 py-2 rounded hover:bg-blue-50">🎧 Audio</a>
+      <a href="#" class="block px-3 py-2 rounded hover:bg-blue-50">📎 Documents</a>
+      <a href="#" class="block px-3 py-2 rounded hover:bg-blue-50">👤 Members</a>
+      <a href="#" class="block px-3 py-2 bg-blue-100 text-blue-700 rounded">🔐 Admin Roles</a>
+    </nav>
+  </aside>
+
+  <!-- Main Panel -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+
+    <!-- Topbar -->
+    <header class="bg-white shadow px-6 py-4 flex items-center justify-between border-b">
+      <h1 class="text-lg font-semibold text-gray-800">Admin Members & Roles</h1>
+      <button class="bg-blue-700 text-white text-sm px-4 py-2 rounded hover:bg-blue-600">+ Invite Admin Member</button>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-1 overflow-y-auto p-6">
+      <div class="bg-white rounded shadow overflow-x-auto">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-2 font-semibold text-gray-600">Name</th>
+              <th class="px-4 py-2 font-semibold text-gray-600">Email</th>
+              <th class="px-4 py-2 font-semibold text-gray-600">Role</th>
+              <th class="px-4 py-2 font-semibold text-gray-600">Last Active</th>
+              <th class="px-4 py-2 font-semibold text-gray-600">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="px-4 py-2">Magnus Johansson</td>
+              <td class="px-4 py-2">magnus@domain.com</td>
+              <td class="px-4 py-2">
+                <select class="border px-2 py-1 rounded">
+                  <option selected>Owner</option>
+                  <option>Admin</option>
+                  <option>Editor</option>
+                  <option>Viewer</option>
+                </select>
+              </td>
+              <td class="px-4 py-2">2 hours ago</td>
+              <td class="px-4 py-2 text-blue-600 hover:underline cursor-pointer">Remove</td>
+            </tr>
+            <tr class="border-t">
+              <td class="px-4 py-2">Sophia Lewis</td>
+              <td class="px-4 py-2">sophia@domain.com</td>
+              <td class="px-4 py-2">
+                <select class="border px-2 py-1 rounded">
+                  <option>Owner</option>
+                  <option selected>Admin</option>
+                  <option>Editor</option>
+                  <option>Viewer</option>
+                </select>
+              </td>
+              <td class="px-4 py-2">1 day ago</td>
+              <td class="px-4 py-2 text-blue-600 hover:underline cursor-pointer">Remove</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+</div>
+
+</body>
+</html>

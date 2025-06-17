@@ -1,3 +1,4 @@
+import "./globals.css";
 import AuthProvider from "../components/AuthProvider";
 import NavBar from "../components/NavBar";
 
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-white text-gray-800 font-sans">
         <AuthProvider>
           <NavBar />
           {children}

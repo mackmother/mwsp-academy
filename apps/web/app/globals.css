@@ -1,0 +1,20 @@
+/**
+ * Tailwind CSS Setup
+ * Base - resets and foundational styles
+ * Components - component class definitions
+ * Utilities - utility class definitions 
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar & selection */
+::selection {
+  background-color: #F6B352;
+  color: #1F2124;
+}
+
+html,
+body {
+  min-height: 100%;
+}
