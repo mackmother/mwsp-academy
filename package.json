@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
-    "build:web": "cd apps/web && NODE_ENV=production npx tailwindcss -i ./app/globals.css -o ./app/output.css && pnpm build",
+    "build:web": "cd apps/web && NODE_ENV=production pnpm exec tailwindcss -i ./app/globals.css -o ./app/output.css && pnpm build",
     "lint": "eslint \"**/*.{ts,tsx,js,jsx}\"",
     "format": "prettier -w ."
   },
