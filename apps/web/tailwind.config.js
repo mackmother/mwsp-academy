@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    // App directory pattern
     "./app/**/*.{js,ts,jsx,tsx}",
+    // Components directory pattern
     "./components/**/*.{js,ts,jsx,tsx}",
+    // Explicit paths for layout components
+    "./app/layout.tsx",
+    "./app/sales/section/page.tsx",
   ],
   theme: {
     extend: {
