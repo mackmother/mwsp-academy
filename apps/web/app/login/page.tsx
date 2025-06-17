@@ -22,7 +22,7 @@ export default function LoginDirect() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
         {/* Branding Section - ALWAYS visible */}
-        <div className="bg-gradient-to-b from-blue-900 to-blue-700 relative">
+        <div className="bg-gradient-to-b from-blue-grad-start to-blue-grad-end relative">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-10">
             <h1 className="text-3xl font-bold mb-4">MSP Growth Hub</h1>
             <p className="text-lg text-center max-w-md">
@@ -35,7 +35,7 @@ export default function LoginDirect() {
         <div className="flex items-center justify-center px-6 py-12 relative">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-blue-800">Welcome Back</h2>
+              <h2 className="text-2xl font-bold text-primary">Welcome Back</h2>
               <p className="text-sm text-gray-500">Sign in to your account</p>
             </div>
 
@@ -89,14 +89,14 @@ export default function LoginDirect() {
                 type="email"
                 name="email"
                 placeholder="Email address"
-                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-primary focus:border-primary"
                 required
               />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
-                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:ring-primary focus:border-primary"
                 required
               />
 
