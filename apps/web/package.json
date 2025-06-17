@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:css": "NODE_ENV=production tailwindcss -i ./app/globals.css -o ./app/output.css",
-    "build": "npm run build:css && next build",
+    "build:css": "NODE_ENV=production pnpm exec tailwindcss -i ./app/globals.css -o ./app/output.css",
+    "build": "pnpm run build:css && next build",
     "dev:turbopack": "next dev --turbopack",
     "start": "next start",
     "lint": "next lint"
