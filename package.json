@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
+    "build:web": "pnpm --filter web build",
     "lint": "eslint \"**/*.{ts,tsx,js,jsx}\"",
     "format": "prettier -w ."
   },
