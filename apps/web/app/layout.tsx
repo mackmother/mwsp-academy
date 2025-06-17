@@ -1,6 +1,8 @@
 import "./globals.css";
 import AuthProvider from "../components/AuthProvider";
 import NavBar from "../components/NavBar";
+// Force CSS import in production
+import { Inter } from 'next/font/google';
 
 export const metadata = {
   title: 'Next.js',
