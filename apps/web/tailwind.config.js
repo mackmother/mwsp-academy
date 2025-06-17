@@ -9,8 +9,8 @@ module.exports = {
       colors: {
         'blue-grad-start': '#1e3a8a', // blue-900
         'blue-grad-end': '#1d4ed8',   // blue-700
-      },
-      colors: {
+        'primary': '#0041C2',         // From kit
+        'accent': '#FF4D4F',          // From kit
         brand: {
           primary: "#F6B352",
           secondary: "#F68657",
