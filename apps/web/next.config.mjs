@@ -12,6 +12,16 @@ const nextConfig = {
     // Skip TS errors during production build
     ignoreBuildErrors: true,
   },
+  // Configure external image domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
