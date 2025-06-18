@@ -1,5 +1,4 @@
 import "./globals.css";
-import "./output.css";
 import AuthProvider from "../components/AuthProvider";
 import NavBar from "../components/NavBar";
 // Force CSS import in production
