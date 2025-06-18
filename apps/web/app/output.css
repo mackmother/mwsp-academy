@@ -1,0 +1,4 @@
+/* Base Tailwind CSS - Manually added as a workaround for build issues */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
